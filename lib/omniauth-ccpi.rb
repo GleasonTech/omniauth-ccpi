@@ -12,10 +12,10 @@ module OmniAuth
     @@provider_url = "https://localhost:3000"
 
     # Sets the omniauth application id
-    mattr_accessor :omniauth_entropi_app_id
+    mattr_accessor :omniauth_ccpi_app_id
     @@omniauth_ccpi_app_id = ""
 
-    mattr_accessor :omniauth_entropi_app_secret
+    mattr_accessor :omniauth_ccpi_app_secret
     @@omniauth_ccpi_app_secret = ""
 
     def self.setup

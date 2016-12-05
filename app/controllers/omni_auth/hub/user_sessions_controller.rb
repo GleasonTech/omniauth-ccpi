@@ -31,7 +31,7 @@ class OmniAuth::CCPi::UserSessionsController < ApplicationController
     user.save
 
     # Check if organizations are enabled for this application.
-    if OmniAuth::Entropi.enable_organizations
+    if OmniAuth::CCPi.enable_organizations
       organizations = user_attributes['organizations'] || []
       organizations.each do |o|
 
@@ -105,12 +105,12 @@ class OmniAuth::CCPi::UserSessionsController < ApplicationController
     redirect_url_param = params[:redirect_url] ? "?redirect_url=#{params[:redirect_url]}" : ""
 
     Rails.logger.info "*******************************************************************"
-    Rails.logger.info OmniAuth::Entropi.provider_url
+    Rails.logger.info OmniAuth::ccpi.provider_url
     Rails.logger.info "*******************************************************************"
 
     # Display a message indicating a successful logout and redirect to the
     # authentication provider to logout globally.
     flash[:notice] = "You have logged out successfully"
-    redirect_to "#{OmniAuth::Entropi.provider_url}/logout#{redirect_url_param}"
+    redirect_to "#{OmniAuth::ccpi.provider_url}/logout#{redirect_url_param}"
   end
 end

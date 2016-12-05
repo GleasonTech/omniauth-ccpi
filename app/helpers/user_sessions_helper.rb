@@ -1,5 +1,5 @@
 module UserSessionsHelper
-  def login_path(provider = "entropi")
+  def login_path(provider = "ccpi")
     "/auth/#{provider.to_s}"
   end
 

@@ -5,8 +5,8 @@ class OmniAuth::CCPi::Organization < ActiveResource::Base
 
   self.primary_key = :uid
 
-  self.user     = OmniAuth::CCPi.omniauth_entropi_app_id
-  self.password = OmniAuth::CCPi.omniauth_entropi_app_secret
+  self.user     = OmniAuth::CCPi.omniauth_ccpi_app_id
+  self.password = OmniAuth::CCPi.omniauth_ccpi_app_secret
 
   def users
     self.get(:users)

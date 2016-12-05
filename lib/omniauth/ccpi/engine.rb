@@ -14,8 +14,8 @@ module OmniAuth
       initializer "omniauth.ccpi.configure_strategy" do |app|
         # Setup CCPi CCPi OmniAuth Strategy
         app.middleware.use ::OmniAuth::Strategies::CCPi,
-                              OmniAuth::CCPi.omniauth_entropi_app_id,
-                              OmniAuth::CCPi.omniauth_entropi_app_secret,
+                              OmniAuth::CCPi.omniauth_ccpi_app_id,
+                              OmniAuth::CCPi.omniauth_ccpi_app_secret,
                               client_options: { site: OmniAuth::CCPi.provider_url}
       end
     end

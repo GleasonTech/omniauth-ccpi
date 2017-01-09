@@ -1,5 +1,5 @@
 class User
-  include OmniAuth::CCPi::SentientUser
+  include OmniAuth::Ccpi::SentientUser
   include Mongoid::Document
   include Mongoid::Timestamps
 

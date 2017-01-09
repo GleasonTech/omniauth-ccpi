@@ -1,5 +1,5 @@
 module OmniAuth
-  module CCPi
+  module Ccpi
     module ControllerExtensions
       extend ActiveSupport::Concern
 

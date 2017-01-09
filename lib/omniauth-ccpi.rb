@@ -1,7 +1,7 @@
 require 'rails'
 
 module OmniAuth
-  module CCPi
+  module Ccpi
 
     # Enables organization support using the gem
     mattr_accessor :enable_organizations

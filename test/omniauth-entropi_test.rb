@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class OmniauthCCPiTest < ActiveSupport::TestCase
+class OmniauthCcpiTest < ActiveSupport::TestCase
   test "truth" do
-    assert_kind_of Module, OmniauthCCPi
+    assert_kind_of Module, OmniauthCcpi
   end
 end

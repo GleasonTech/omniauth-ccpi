@@ -1,4 +1,4 @@
-class OmniAuth::CCPi::OrganizationsController < ApplicationController
+class OmniAuth::Ccpi::OrganizationsController < ApplicationController
   before_filter :require_user
 
   # GET /organizations.json

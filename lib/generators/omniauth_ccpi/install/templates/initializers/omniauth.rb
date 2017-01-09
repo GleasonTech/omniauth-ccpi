@@ -1,6 +1,6 @@
 require 'omniauth/strategies/ccpi'
 
-OmniAuth::CCPi.setup do |config|
+OmniAuth::Ccpi.setup do |config|
   # ==> Configuration for Multiple Organizations
   # Setting to true will allow the application to use
   # organizational switching, allowing members to view
@@ -14,10 +14,10 @@ OmniAuth::CCPi.setup do |config|
   config.provider_url = ENV["OMNIAUTH_CCPI_PROVIDER_URL"]
 
   # ==> Configuration for Application ID provided by
-  # CCPi for authentication
+  # Ccpi for authentication
   config.omniauth_ccpi_app_id = ENV["OMNIAUTH_CCPI_APP_ID"]
 
   # ==> Configuration for Application Secret provided
-  # by CCPi for authentication
+  # by Ccpi for authentication
   config.omniauth_ccpi_app_secret = ENV["OMNIAUTH_CCPI_APP_SECRET"]
 end

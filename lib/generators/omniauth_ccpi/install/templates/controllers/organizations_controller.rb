@@ -1,4 +1,4 @@
-class OrganizationsController < OmniAuth::CCPi::OrganizationsController
+class OrganizationsController < OmniAuth::Ccpi::OrganizationsController
 
   # GET /organizations/1/switch
   # GET /organizations/1/switch.json

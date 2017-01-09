@@ -1,4 +1,4 @@
-class UserSessionsController < OmniAuth::CCPi::UserSessionsController
+class UserSessionsController < OmniAuth::Ccpi::UserSessionsController
 
   # POST /auth/:provider/callback
   # def create

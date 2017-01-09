@@ -8,11 +8,11 @@
 # Example Usage
 #
 # class Contact < ActiveRecord::Base
-#   include OmniAuth::CCPi::SentientModel
+#   include OmniAuth::Ccpi::SentientModel
 # end
 #
 module OmniAuth
-  module CCPi
+  module Ccpi
     module SentientModel
       extend ActiveSupport::Concern
 

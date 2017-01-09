@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-module OmniauthCCPi
+module OmniauthCcpi
   module Generators
     class InstallGenerator < ::Rails::Generators::Base
       include Rails::Generators::Migration

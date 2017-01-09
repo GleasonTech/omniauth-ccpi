@@ -5,7 +5,7 @@ module UserSessionsHelper
 
   def signup_path(plan_key=nil)
     query_string = plan_key.nil? ? "" : "?plan=#{plan_key}"
-    "#{OmniAuth::CCPi.provider_url}/register/#{query_string}"
+    "#{OmniAuth::Ccpi.provider_url}/register/#{query_string}"
   end
 
   def checkmark_icon_if_equal(a, b)

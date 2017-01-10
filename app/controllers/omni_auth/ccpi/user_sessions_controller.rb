@@ -7,19 +7,41 @@ class OmniAuth::Ccpi::UserSessionsController < ApplicationController
     omniauth = env['omniauth.auth']
 
     # Get the UID for the logged-in User.
-    uid = omniauth['id']
+    uid = omniauth['uid']
     Rails.logger.info "*"*80
     Rails.logger.info "* user_id: #{uid}"
+    Rails.logger.info omniauth
 
     # Try to find the User in the local database.
-    #user = User.unscoped.find_by_uid(uid)
+    user = User.find_by(uid: uid)
 
     # Create the User in the local database if this is the first time this
     # User is signing in to this application.
-    #user = User.new(uid: uid) unless user
+    user = User.new(uid: uid) unless user
+    Rails.logger.info "* The token is: *****************************************"
+    Rails.logger.info omniauth['credentials']['token']
+    user.access_token = omniauth['credentials']['token']
+
+    # Get the info attributes for the User returned from the callback.
+    user_info = omniauth['info']
+
+    # Get the additional attributes for the User returned from the callback.
+    user_attributes = omniauth['extra']
+
+    # Update the attributes for the User in the local database.
+    user.email           = user_info['email']
+    user.name            = user_info['name']
+    user.access_level    = user_attributes['access_level'].to_sym
+    user.save
 
     # Display a message indicating a successful login and redirect to this
     # application's root URL.
+
+    # Store the OmniAuth authentication callback data in session.
+    Rails.logger.info omniauth
+    Rails.logger.info "#{omniauth['uid']}"
+    session[:user_id] = omniauth['uid']
+
     flash[:notice] = "You have logged in successfully"
     redirect_to root_url
   end

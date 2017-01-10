@@ -14,20 +14,23 @@ module OmniAuth
 
       info do
         {
-          name:  raw_info['name'],
-          email: raw_info['email']
+          name:  raw_info['info']['name'],
+          email: raw_info['info']['email']
         }
       end
 
-      #extra do
-      #  {
-      #    status:           raw_info['extra']['status']           || "",
-      #    is_organization:  raw_info['extra']['is_organization']  || false,
-      #    is_admin:         raw_info['extra']['is_admin']         || false
-      #  }
-      #end
+      extra do
+        {
+          access_level:  raw_info['extra']['access_level'] || :client
+        }
+      end
+
       def raw_info
         @raw_info ||= access_token.get("/api/v1/profile.json").parsed
+        Rails.logger.info @raw_info
+        Rails.logger.info "* Show me extra *************************************"
+        Rails.logger.info @raw_info['extra']
+        @raw_info
       end
 
       def callback_url

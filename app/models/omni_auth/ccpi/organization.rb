@@ -1,4 +1,4 @@
-class OmniAuth::Ccpi::Organization < ActiveResource::Base
+class OmniAuth::Ccpi::Organization < ActiveRecord::Base
   self.site = "#{OmniAuth::Ccpi.provider_url}/api"
 
   self.primary_key = :uid
@@ -7,6 +7,6 @@ class OmniAuth::Ccpi::Organization < ActiveResource::Base
   self.password = OmniAuth::Ccpi.omniauth_ccpi_app_secret
 
   def users
-    self.get(:users)
+    
   end
 end

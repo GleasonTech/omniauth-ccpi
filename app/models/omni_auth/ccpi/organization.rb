@@ -1,5 +1,3 @@
-require "active_resource"
-
 class OmniAuth::Ccpi::Organization < ActiveResource::Base
   self.site = "#{OmniAuth::Ccpi.provider_url}/api"
 

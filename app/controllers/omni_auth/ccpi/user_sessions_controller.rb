@@ -43,7 +43,7 @@ class OmniAuth::Ccpi::UserSessionsController < ApplicationController
     session[:user_id] = omniauth['uid']
 
     flash[:notice] = "You have logged in successfully"
-    redirect_to root_url
+    redirect_to root_url, turbolinks: false
   end
 
   # POST /auth/failure
@@ -66,6 +66,6 @@ class OmniAuth::Ccpi::UserSessionsController < ApplicationController
     # Display a message indicating a successful logout and redirect to the
     # authentication provider to logout globally.
     flash[:notice] = "You have logged out successfully"
-    redirect_to "#{OmniAuth::ccpi.provider_url}/logout#{redirect_url_param}"
+    redirect_to "#{OmniAuth::ccpi.provider_url}/logout#{redirect_url_param}", turbolinks: false
   end
 end
